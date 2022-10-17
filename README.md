@@ -1,5 +1,6 @@
-# week5
-# MYSQL 作業
+# week5 Assignment 
+
+### 要求三：SQL CRUD
 
 **1.使用 INSERT 指令新增一筆資料到 member 資料表中，這筆資料的 username 和 password 欄位必須是 test。接著繼續新增至少 4 筆隨意的資料**
 ```sql
@@ -14,11 +15,9 @@ INSERT INTO `member` (`name`,`username`,`follower_count`, `password`)VALUES('第
 ![](https://i.imgur.com/GB9fROe.png)
 
 **2.使用 SELECT 指令取得所有在 member 資料表中的會員資料。**
-```sql!
+```sql
 SELECT * FROM `member`;
 ```
-
-
 ![](https://i.imgur.com/CNPksPF.png)
 
 **3.使用 SELECT 指令取得所有在 member 資料表中的會員資料，並按照 time 欄位，由近到遠排序。**
@@ -96,7 +95,7 @@ SELECT SUM(`follower_count`) FROM `member`;
 
 **1.在資料庫中，建立新資料表紀錄留言資訊，取名字為 message。資料表中必須包含以下欄位設定**
 
-```sql!
+```sql 
 CREATE TABLE `message` (
     `id` BIGINT PRIMARY KEY AUTO_INCREMENT,
     `member_id` BIGINT NOT NULL,
@@ -104,6 +103,7 @@ CREATE TABLE `message` (
     `like_count` INT UNSIGNED NOT NULL DEFAULT 0,
     `time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP()
 );
+
 ALTER TABLE `message`
     ADD FOREIGN KEY (`member_id`)
     REFERENCES `member`(`id`);
