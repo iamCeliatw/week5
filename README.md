@@ -38,19 +38,19 @@ SELECT * FROM `member` ORDER BY `time` DESC LIMIT 1,3;
 ```sql
 SELECT *
 FROM `member`
-WHERE `password` LIKE 'test' ;
+WHERE `password` = 'test' ;
 ```
 
-![](https://i.imgur.com/xwbf7Sh.png)
+![image](https://user-images.githubusercontent.com/105853807/196332368-d7d063d7-8827-452e-a967-3091516f2e29.png)
 
 **6.使用 SELECT 指令取得欄位 username 是 test、且欄位 password 也是 test 的資料。**
 
 ```sql
 SELECT *
 FROM `member`
-WHERE `password` LIKE 'test' AND `username` LIKE 'test';
+WHERE `password` = 'test' AND `username` = 'test';
 ```
-![](https://i.imgur.com/g691QTe.png)
+![image](https://user-images.githubusercontent.com/105853807/196332283-32ca839d-866c-4a6b-9a84-67626a840ada.png)
 
 **7.使用 UPDATE 指令更新欄位 username 是 test 的會員資料，將資料中的 name 欄位改成 test2。**
 ```sql
